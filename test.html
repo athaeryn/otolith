@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gimbal.js test</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+      body {
+        color: white;
+        background: cadetblue;
+      }
+      .target {
+        margin-top: 45%;
+        text-align: center;
+        font-size: 8em;
+        font-family: monospace;
+        letter-spacing: -.1em;
+        text-shadow: 0 3px burlywood;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="target" class="target">???</div>
+    <script src="gimbal.js"></script>
+    <script>
+      var gimbal = new Gimbal({
+        axis: 'x',
+        callback: gimbalHandler,
+        range: 35
+      });
+      function gimbalHandler(percent) {
+        document.getElementById('target').innerHTML = percent + '%';
+      }
+    </script>
+  </body>
+</html>
