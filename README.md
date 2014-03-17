@@ -73,7 +73,7 @@ option:
 
 ```js
 gimbal = new Gimbal({
-  axis: 'y',
+  axis: 'z',
   callback: gimbalCallback,
   raw: true
 });
