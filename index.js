@@ -2,7 +2,7 @@
 
 function Otolith (options) {
   this._options = options || {}
-  this._options.axis = this.options.axis || 'x'
+  this._options.axis = this._options.axis || 'x'
   this._options.range = this._options.range || 180
 
   // Look up the axis to use.
