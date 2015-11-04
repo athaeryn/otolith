@@ -1,22 +1,20 @@
-# Gimbal.js
+# Otolith
 
-Gimbal.js lets you control things by tilting your device.
+[Otolith](https://en.wikipedia.org/wiki/Otolith) lets you control things by
+tilting your device.
 
 
 ## Usage
 
-To use Gimbal.js, tell it which axis you want to listen to, give it a
-callback, and watch it go! Gimbal.js only allows rotation on one axis, just
-like a [real gimbal](http://en.wikipedia.org/wiki/Gimbal), but there's nothing
-stopping you setting up more than one.
+To use Otolith, tell it which axis you want to listen to, give it a
+callback, and watch it go! Otolith only allows rotation on one axis, but
+there's nothing stopping you setting up more than one.
 
 ```js
 if (window.DeviceOrientationEvent) {
-  gimbal = new Gimbal({
+  otolith = new Otolith({
     axis: 'x',
-    callback: function (val) {
-      console.log(val);
-    }
+    callback: function (val) { /* */ }
   );
 }
 ```
@@ -25,9 +23,8 @@ The value passed to the callback is a number in the range [-1,1] representing
 the current point through the rotation.
 
 If you wish, you may stop your callback being called, either temporarily or
-permanently. You can "pause" the gimbal with the `lock` function, and "unpause"
-it with the `unlock` function. Don't worry, [gimbal
-lock](http://en.wikipedia.org/wiki/Gimbal_lock) isn't an issue.
+permanently. You can use the `start` and `stop` functions to stop your
+callback being called.
 
 
 ## Options
@@ -51,9 +48,9 @@ Will be called a lot. Be prepared.
 _(optional)_
 
 ```js
-gimbal = new Gimbal({
-  axis: 'y',
-  callback: gimbalCallback,
+otolith = new Otolith({
+  axis: 'x',
+  callback: function (val) { /* */ }
   range: 35
 });
 ```
@@ -63,21 +60,3 @@ range of rotation. For instance, if you pass a range of 35, any degree of
 rotation greater than 35&deg; will produce a value of 1. This works in the
 negative direction as well.
 
-
-### raw
-
-_(optional)_
-
-If you'd rather receive the raw data from the event, you can pass the `raw`
-option:
-
-```js
-gimbal = new Gimbal({
-  axis: 'z',
-  callback: gimbalCallback,
-  raw: true
-});
-```
-
-When this option is set, the value given to the callback will be a number in
-the range [-180,180].

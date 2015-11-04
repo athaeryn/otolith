@@ -1,0 +1,21 @@
+{
+  "name": "otolith",
+  "version": "1.0.0",
+  "description": "A lightweight javascript tilt control",
+  "main": "index.js",
+  "scripts": { },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/athaeryn/otolith.git"
+  },
+  "keywords": [
+    "orientation",
+    "tilt"
+  ],
+  "author": "Mike Anderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/athaeryn/otolith/issues"
+  },
+  "homepage": "https://github.com/athaeryn/otolith#readme"
+}
